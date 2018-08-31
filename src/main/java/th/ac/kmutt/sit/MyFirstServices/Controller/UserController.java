@@ -20,9 +20,7 @@ public class UserController {
     @GetMapping("/user/all")
     public User[] getUserAll() {
         User.addUser(user, allname);
-        for (User str : user) {
-            System.out.println(str);
-        }
+
         return user;
     }
 
