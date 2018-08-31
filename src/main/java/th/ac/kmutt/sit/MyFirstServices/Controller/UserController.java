@@ -1,5 +1,6 @@
 package th.ac.kmutt.sit.MyFirstServices.Controller;
 
+import java.util.Arrays;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,7 +20,17 @@ public class UserController {
     @GetMapping("/user/all")
     public User[] getUserAll() {
         User.addUser(user, allname);
+        for (User str : user) {
+            System.out.println(str);
+        }
         return user;
+    }
+
+    @Override
+    public String toString() {
+        User.addUser(user, allname);
+        return Arrays.toString(user);
+
     }
 
 }
